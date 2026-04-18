@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#define BLOBS 3
+#define BLOBS 5
 
 typedef struct {
     float x, y, dx, dy, r;
