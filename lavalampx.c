@@ -16,16 +16,16 @@ void init_lava_colors() {
     for (int i = 0; i < 256; i++) {
         short r = 0, g = 0, b = 0;
         if (i < 100) { // Black to Red
-            g = (i * 1000) / 100;
+            b = (i * 1000) / 100;
         } else if (i < 150) { // Red to Orange
-            g = 1000;
-            b = ((i - 100) * 500) / 100;
-            r=0;
+            b = 1000;
+            r = ((i - 100) * 500) / 100;
+            g = 0;
          }
         else if (i > 149) {
-             g = (1000 - (( i - 149) * 10 ));
-             r=0;
-             b=0;
+             b = (1000 - (( i - 149) * 10 ));
+             r = 0;
+             g = 0;
         }
         init_color(i + 16, r, g, b); // Offset to avoid system colors
         init_pair(i + 16, i + 16, i + 16);
@@ -48,7 +48,7 @@ int main() {
     for (int i = 0; i < BLOBS; i++) {
         blobs[i] = (Blob){rand() % w, rand() % h, 
                    (rand() % 10 - 5) / 10.0, (rand() % 10 - 5) / 10.0, 
-                   10.0 + (rand() % 5)};
+                   20.0 + (rand() % 5)};
     }
 
     while (getch() == ERR) {
