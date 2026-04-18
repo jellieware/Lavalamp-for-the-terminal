@@ -1,7 +1,7 @@
 # Lavalamp-for-the-terminal
 lavalamp animation for the terminal
 
-![1001042061](https://github.com/user-attachments/assets/b9053faf-9347-46a4-8b12-3f12a2e24f37)
+<img width="720" height="1600" alt="1001093408" src="https://github.com/user-attachments/assets/e8aa00df-9238-4cc7-8581-4e778b059a61" />
 
 <br><br>
 
