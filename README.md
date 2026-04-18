@@ -1,7 +1,7 @@
 # Lavalamp-for-the-terminal
 lavalamp animation for the terminal
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VThVMVB88rU" frameborder="0" allowfullscreen></iframe>
+[![Video Alt Text](https://img.youtube.com/vi/VThVMVB88rU/0.jpg)](https://www.youtube.com/watch?v=VThVMVB88rU)
 
 <br><br>
 
