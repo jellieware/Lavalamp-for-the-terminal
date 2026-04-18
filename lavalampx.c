@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#define BLOBS 5
+#define BLOBS 3
 
 typedef struct {
     float x, y, dx, dy, r;
@@ -17,13 +17,15 @@ void init_lava_colors() {
         short r = 0, g = 0, b = 0;
         if (i < 100) { // Black to Red
             g = (i * 1000) / 100;
-        } else if (i < 200) { // Red to Orange
+        } else if (i < 150) { // Red to Orange
             g = 1000;
-            b = 0;
-        } else { // Orange to White (Glossy Highlight)
-            g = 1000;
-            r = 0;
-            b = 0;
+            b = ((i - 100) * 500) / 100;
+            r=0;
+         }
+        else if (i > 149) {
+             g = (1000 - (( i - 149) * 10 ));
+             r=0;
+             b=0;
         }
         init_color(i + 16, r, g, b); // Offset to avoid system colors
         init_pair(i + 16, i + 16, i + 16);
@@ -58,7 +60,7 @@ int main() {
                     float dy = y - blobs[i].y;
                     float d2 = dx*dx + dy*dy;
                     //if (d2 > -1) sum += (blobs[i].r * blobs[i].r) / d2;
- 		    if (d2 > 0) sum += (blobs[i].r * blobs[i].r) / d2;
+ 		    if (d2 > -1) sum += (blobs[i].r * blobs[i].r) / d2;
                 }
                 
                 int color_idx = (int)(sum * 50);
@@ -78,7 +80,7 @@ int main() {
             if (blobs[i].y < 0 || blobs[i].y >= h) blobs[i].dy *= -1;
         }
         refresh();
-        usleep(30000);
+        usleep(90000);
     }
 
     endwin();
